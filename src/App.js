@@ -7,7 +7,7 @@ import "./styles/style.css";
 
 function App() {
   const [counter, setCounter] = useState(0);
-  const [addedCart, setAddedCart] = useState(true);
+  const [addedCart, setAddedCart] = useState(false);
 
   function increaseCount() {
     setCounter(counter + 1);
