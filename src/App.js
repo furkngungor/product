@@ -1,23 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {useState} from "react";
+import Overlay from "./components/Overlay";
+import Header from "./components/Header";
+import Product from "./components/Product";
+import "./styles/style.css";
+
 
 function App() {
+  const [counter, setCounter] = useState(0);
+  const [addedCart, setAddedCart] = useState(true);
+
+  function increaseCount() {
+    setCounter(counter + 1);
+  }
+
+  function decreaseCount() {
+    if (counter !== 0) {
+      setCounter(counter - 1);      
+    }
+  }
+
+  function addCart() {
+    setAddedCart(true);
+  }
+
+  function removeCart() {
+    setCounter(0);
+    setAddedCart(false);
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Overlay />
+      <Header counter={counter} remove={removeCart} cart={addedCart} />
+      <Product increase={increaseCount} decrease={decreaseCount} add={addCart} counter={counter} /> 
     </div>
   );
 }

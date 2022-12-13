@@ -1,0 +1,561 @@
+@import "./normalize.css";
+
+*, body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 375px;
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Header */
+
+.Header {
+  width: 100%;
+  height: 75px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.header-brand {
+  display: flex;
+  align-items: center;
+}
+
+.header-nav {
+  width: 75vw;
+  height:calc(125vh + 75px);
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 2;
+  top: 0%;
+  left: 0%;
+  background-color: white;
+  padding-left: 20px;
+  padding-top: 25px;
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: 0.2s;
+}
+
+.close-logo {
+  width: 25px;
+  height: 25px;
+  margin-bottom: 50px;
+}
+
+.header-nav a {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  margin-top: 20px;
+}
+
+.user-section {
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.hamburger-logo {
+  width: 25px;
+  height: 25px;
+}
+
+.logo {
+  width: 100%;
+  height: 100%;
+  margin-left: 20px;
+  margin-bottom: 0px;
+}
+
+.cart-logo{
+  padding: 10px;
+}
+
+.profile-photo {
+  width: 50%;
+  height: 50%;
+}
+
+.cart-counter {
+  width: 20px;
+  height: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 10%;
+  left: calc(50% - 25px);
+  background-color: hsl(26, 100%, 55%);
+  color: white;
+  font-weight: 700;
+  font-size: 0.7em;
+  border-radius: 10px;
+}
+
+/* Cart */
+
+.cart-section {
+  width: calc(100% - 10px);
+  height: 40vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 1;
+  top: 105%;
+  left: 5px;
+  background-color: white;
+  border-radius: 10px;
+  transform: translateY(-200%);
+  transition: 0.2s;
+  visibility: hidden;
+}
+
+.cart-header {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  border-bottom: 1px solid hsl(220, 14%, 75%);
+}
+
+.cart-header h5 {
+  font-weight: 700;
+}
+
+.cart-info {
+  height: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.cart-product-image {
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+}
+
+.cart-product {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-product-info {
+  width: 100%;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.cart-product-info h5 {
+  color: hsl(220, 14%, 75%);
+  font-size: 1em;
+}
+
+.cart-product-info h5 b {
+  color: hsl(220, 13%, 13%);
+}
+
+
+.delete-icon {
+  padding: 10px;
+}
+
+.empty {
+  margin: 0px auto;
+}
+
+.show-nav {
+  transform: translateX(0%);
+  visibility: visible;
+  transition: 0.2s;
+}
+
+.show-cart {
+  transform: translateY(0%);
+  visibility: visible;
+  transition: 0.2s;
+}
+
+/* Product */
+
+.Product {
+  width: 100%;
+  height: 130vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-image {
+  width: 100%;
+  height: 50%;
+  position: relative;
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-item:nth-child(1) {
+  display: block;
+}
+
+.carousel-item:nth-child(2),
+.carousel-item:nth-child(3),
+.carousel-item:nth-child(4) {
+  display: none;
+}
+
+
+.prev, .next {
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+
+.prev img, .next img {
+  width: 33.3%;
+  height: 33.3%;
+}
+
+.prev {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+}
+
+.next {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+}
+
+.carousel-control {
+  display: none;
+}
+
+.product-price {
+  width: 100%;
+  height: 50%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+h2 {
+  color: hsl(26, 100%, 55%);
+  text-transform: uppercase;
+  font-size: 0.9em;
+  letter-spacing: 5px;
+  font-weight: 700;
+}
+
+h1 {
+  color: hsl(220, 13%, 13%);
+}
+
+p {
+  color: hsl(219, 9%, 45%);
+  line-height: 25px;
+}
+
+.price {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+h4 {
+  color: hsl(26, 100%, 55%);
+  background-color: hsl(25, 100%, 94%);
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+}
+
+h3 {
+  color: hsl(220, 14%, 75%);
+  text-decoration: line-through;
+  margin-left: 10px;
+}
+
+.counter {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px;
+  background-color: hsl(223, 64%, 98%);
+  margin-bottom: 10px;
+}
+
+.counter img {
+  padding: 10px;
+}
+
+.add-cart-button {
+  height: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(26, 100%, 55%);
+  border: 0;
+  border-radius: 10px;
+  color: white;
+  font-weight: 700;
+}
+
+.add-cart-button svg {
+  margin-right: 10px;
+}
+
+.add-cart-button svg path {
+  fill: white;
+}
+
+.add-cart-button:hover {
+  background-color: hsla(26, 100%, 55%, 0.557);
+  transition: 0.2s;
+}
+
+/* Overlay */
+
+.Overlay {
+  display: none;
+}
+
+@media (width >= 992px) {
+  body {
+    width: 100vw;
+    height: 100vh;
+    padding-left: 10%;
+    padding-right: 10%;
+    overflow-y: hidden;
+  }
+
+  /* Header */
+
+  .Header {
+    padding-left: 0;
+    padding-right: 0;
+    border-bottom: 2px solid hsl(223, 64%, 98%);
+  }
+
+  .header-brand {
+    height: 100%;
+  }
+
+  .header-nav {
+    width: 500px;
+    height: 100%;
+    transform: translateX(0%);
+    position: static;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-left: 0px;
+    padding-top: 0px;
+    margin-left: 50px;
+    visibility: visible;
+  }
+
+  .header-nav a {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    color: hsl(219, 9%, 45%);
+    font-weight: 400;
+  }
+
+  .header-nav a:hover {
+    color: hsl(220, 13%, 13%);
+    
+    border-top: 2px solid transparent;
+    border-bottom: 2px solid hsl(26, 100%, 55%);
+  }
+
+  .hamburger-logo, .close-logo {
+    display: none;
+  }
+
+  .logo {
+    width: 125px;
+    height: 25px;
+    margin-left: 0;
+  }
+
+  /* Cart */
+  
+  .cart-section {
+    width: 400px;
+    height: 200px;
+    left: calc(100% - 400px);
+    right: 0%;
+    -webkit-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+    -moz-box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+    box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.5);
+  }
+
+  /* Product */
+
+  .Product {
+    margin-top: 30px;
+    flex-direction: row;
+  }
+
+  .product-image {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .product-image img {
+    border-radius: 10px;
+  }
+
+  .prev, .next {
+    display: none;
+  }
+
+  .carousel-control {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 25px;
+  }
+
+  .carousel-control-item {
+    width: 15%;
+    height: 15%;
+    border-radius: 11px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .carousel-control-item img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .carousel-control-item:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+  }
+
+  .carousel-control-item:hover .carousel-control-item-image {
+    opacity: 0.5;
+  }
+
+  .product-price {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+
+  .minus, .plus, .add-cart-button,
+  .cart-logo, .profile-photo, .delete-icon,
+  .prev, .next {
+    cursor: pointer;
+  }
+
+  .profile-photo {
+    border-radius: 50%;
+  }
+
+  .profile-photo:hover {
+    border: 2px solid hsl(26, 100%, 55%);
+  }
+
+  /* Overlay */
+
+  .Overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+  }
+
+  .overlay-content {
+    width: 40%;
+    position: relative;
+  }
+
+  .overlay-carousel-item:nth-child(1) {
+    display: block;
+  }
+  
+  .overlay-carousel-item:nth-child(2),
+  .overlay-carousel-item:nth-child(3),
+  .overlay-carousel-item:nth-child(4) {
+    display: none;
+  }
+
+  .overlay-content .close-button {
+    padding: 10px;
+    position: absolute;
+    right: 0;
+    z-index: 4;
+    display: flex;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+  }
+
+  .overlay-content .close-button svg path {
+    fill: hsl(25, 100%, 94%);
+  }
+
+  .overlay-content .prev, .overlay-content .next {
+    display: block;
+    top: 40%
+  }
+
+  .overlay-content .prev {
+    left: 30px;
+  }
+
+  .overlay-content .next {
+    right: 30px;
+  }
+
+}
